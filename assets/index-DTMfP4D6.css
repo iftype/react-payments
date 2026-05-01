@@ -138,14 +138,7 @@ Add the correct display in Chrome and Safari.
 	display: list-item;
 }body {}body {
   font-family: 'Noto Sans', sans-serif;
-}
-._creditCard_albfu_2 {
-  padding-top: 77px;
-  padding-bottom: 45px;
-  text-align: center;
-}
-
-._card_albfu_8 {
+}._card_tg565_1 {
   display: inline-block;
   position: relative;
   width: 212px;
@@ -157,41 +150,40 @@ Add the correct display in Chrome and Safari.
   box-sizing: border-box;
 }
 
-._card_albfu_8:after {
-  content: "";
+._card_tg565_1:after {
+  content: '';
   position: absolute;
   width: 36px;
   height: 22px;
   top: 8px;
   left: 12px;
   opacity: 1;
-  border: 0.5px solid #DDCD781A;
+  border: 0.5px solid #ddcd781a;
   border-radius: 4px;
-  background-color: #DDCD78;
-  
+  background-color: #ddcd78;
 }
 
-._brand_albfu_34 {
+._brand_tg565_26 {
   position: absolute;
   top: 8px;
   right: 12px;
   width: 36px;
 }
 
-._brand_albfu_34 svg {
+._brand_tg565_26 svg {
   width: 100%;
   height: auto;
 }
 
-._number_albfu_46 {
+._number_tg565_38 {
   padding-top: 44px;
   color: #ffffff;
   font-size: 14px;
 }
-._number_albfu_46 span {
+._number_tg565_38 span {
   padding-right: 10px;
 }
-._expirationDate_albfu_54 {
+._expirationDate_tg565_46 {
   padding-top: 8px;
   color: #ffffff;
   font-size: 14px;

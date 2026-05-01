@@ -9916,11 +9916,10 @@ var require_client = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_client = require_client();
 var CreditCard_module_default = {
-	creditCard: "_creditCard_albfu_2",
-	card: "_card_albfu_8",
-	brand: "_brand_albfu_34",
-	number: "_number_albfu_46",
-	expirationDate: "_expirationDate_albfu_54"
+	card: "_card_tg565_1",
+	brand: "_brand_tg565_26",
+	number: "_number_tg565_38",
+	expirationDate: "_expirationDate_tg565_46"
 };
 //#endregion
 //#region node_modules/react/cjs/react-jsx-runtime.production.js
