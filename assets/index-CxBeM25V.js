@@ -9915,11 +9915,55 @@ var require_client = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 //#region src/core/styles/index.css
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_client = require_client();
+//#endregion
+//#region src/pages/payments/Payments.module.css
+var import_classnames = /* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exports, module) => {
+	/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+	*/
+	(function() {
+		"use strict";
+		var hasOwn = {}.hasOwnProperty;
+		function classNames() {
+			var classes = "";
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (arg) classes = appendClass(classes, parseValue(arg));
+			}
+			return classes;
+		}
+		function parseValue(arg) {
+			if (typeof arg === "string" || typeof arg === "number") return arg;
+			if (typeof arg !== "object") return "";
+			if (Array.isArray(arg)) return classNames.apply(null, arg);
+			if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) return arg.toString();
+			var classes = "";
+			for (var key in arg) if (hasOwn.call(arg, key) && arg[key]) classes = appendClass(classes, key);
+			return classes;
+		}
+		function appendClass(value, newClass) {
+			if (!newClass) return value;
+			if (value) return value + " " + newClass;
+			return value + newClass;
+		}
+		if (typeof module !== "undefined" && module.exports) {
+			classNames.default = classNames;
+			module.exports = classNames;
+		} else if (typeof define === "function" && typeof define.amd === "object" && define.amd) define("classnames", [], function() {
+			return classNames;
+		});
+		else window.classNames = classNames;
+	})();
+})))(), 1);
+var Payments_module_default = { payments: "_payments_1us6g_1" };
 var CreditCard_module_default = {
-	card: "_card_tg565_1",
-	brand: "_brand_tg565_26",
-	number: "_number_tg565_38",
-	expirationDate: "_expirationDate_tg565_46"
+	creditCard: "_creditCard_1d5px_1",
+	card: "_card_1d5px_9",
+	brand: "_brand_1d5px_34",
+	number: "_number_1d5px_46",
+	expirationDate: "_expirationDate_1d5px_54"
 };
 //#endregion
 //#region node_modules/react/cjs/react-jsx-runtime.production.js
@@ -9933,7 +9977,7 @@ var CreditCard_module_default = {
 * LICENSE file in the root directory of this source tree.
 */
 var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((exports) => {
-	var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment");
+	var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element");
 	function jsxProd(type, config, maybeKey) {
 		var key = null;
 		void 0 !== maybeKey && (key = "" + maybeKey);
@@ -9951,7 +9995,6 @@ var require_react_jsx_runtime_production = /* @__PURE__ */ __commonJSMin(((expor
 			props: maybeKey
 		};
 	}
-	exports.Fragment = REACT_FRAGMENT_TYPE;
 	exports.jsx = jsxProd;
 	exports.jsxs = jsxProd;
 }));
@@ -10047,48 +10090,6 @@ var CreditCard = ({ cardBrand = "mastercard", cardNumberList, expirationDate }) 
 		})
 	});
 };
-//#endregion
-//#region src/core/components/formGroup/FormGroup.module.css
-var import_classnames = /* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exports, module) => {
-	/*!
-	Copyright (c) 2018 Jed Watson.
-	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
-	*/
-	(function() {
-		"use strict";
-		var hasOwn = {}.hasOwnProperty;
-		function classNames() {
-			var classes = "";
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (arg) classes = appendClass(classes, parseValue(arg));
-			}
-			return classes;
-		}
-		function parseValue(arg) {
-			if (typeof arg === "string" || typeof arg === "number") return arg;
-			if (typeof arg !== "object") return "";
-			if (Array.isArray(arg)) return classNames.apply(null, arg);
-			if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) return arg.toString();
-			var classes = "";
-			for (var key in arg) if (hasOwn.call(arg, key) && arg[key]) classes = appendClass(classes, key);
-			return classes;
-		}
-		function appendClass(value, newClass) {
-			if (!newClass) return value;
-			if (value) return value + " " + newClass;
-			return value + newClass;
-		}
-		if (typeof module !== "undefined" && module.exports) {
-			classNames.default = classNames;
-			module.exports = classNames;
-		} else if (typeof define === "function" && typeof define.amd === "object" && define.amd) define("classnames", [], function() {
-			return classNames;
-		});
-		else window.classNames = classNames;
-	})();
-})))(), 1);
 var FormGroup_module_default = {
 	formGroup: "_formGroup_vhkre_1",
 	titleContainer: "_titleContainer_vhkre_12",
@@ -10306,70 +10307,73 @@ var Payments = () => {
 		preventCvc(cvc);
 		setOnBlurCvc(true);
 	};
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CreditCard, {
-			bank: "default",
-			cardBrand: renderBrandCard(cardNumbers),
-			cardNumberList: cardNumbers,
-			expirationDate: [expirationDate.month, expirationDate.year]
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormGroup, {
-			title: "결제할 카드 번호를 입력해 주세요",
-			subTitle: "본인 명의의 카드만 결제 가능합니다.",
-			label: "카드 번호",
-			errorMessage: renderErrorMessageCardNumbers(cardNumbers),
-			children: cardNumbers.map((value, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-				type: "text",
-				value,
-				maxLength: 4,
-				placeholder: "1234",
-				isError: renderErrorCardNumberInput(cardNumbers[index]),
-				onChange: (e) => handleChangeCardNumber(index, e.target.value),
-				onBlur: () => handleBlurCardNumber(index)
-			}, index))
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FormGroup, {
-			title: "카드 유효기간을 입력해 주세요",
-			subTitle: "월/년도(MMYY)를 순서대로 입력해 주세요",
-			label: "유효기간",
-			errorMessage: renderErrorMessageExpirationDate(expirationDate),
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-				type: "tel",
-				value: expirationDate.month,
-				maxLength: 2,
-				onChange: (e) => handleChangeExpirationDate("month", e.target.value),
-				onBlur: () => {
-					handleBlurExpirationDate("month");
-				},
-				isError: Object.values(onBlurExpirationDate).includes(true) && !isValidateExpirationDate.month,
-				placeholder: "MM"
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-				type: "tel",
-				value: expirationDate.year,
-				maxLength: 2,
-				onChange: (e) => handleChangeExpirationDate("year", e.target.value),
-				onBlur: () => {
-					handleBlurExpirationDate("year");
-				},
-				isError: Object.values(onBlurExpirationDate).includes(true) && !isValidateExpirationDate.year,
-				placeholder: "YY"
-			})]
-		}),
-		/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormGroup, {
-			title: "CVC 번호를 입력해 주세요",
-			label: "CVC",
-			errorMessage: renderErrorMessageCvc(cvc),
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-				type: "text",
-				value: cvc,
-				maxLength: 3,
-				placeholder: "123",
-				isError: onBlurCvc && !validateCvc(cvc),
-				onChange: (e) => handleChangeCvc(e.target.value),
-				onBlur: () => handleBlurCvc()
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: (0, import_classnames.default)(Payments_module_default.payments),
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CreditCard, {
+				bank: "default",
+				cardBrand: renderBrandCard(cardNumbers),
+				cardNumberList: cardNumbers,
+				expirationDate: [expirationDate.month, expirationDate.year]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormGroup, {
+				title: "결제할 카드 번호를 입력해 주세요",
+				subTitle: "본인 명의의 카드만 결제 가능합니다.",
+				label: "카드 번호",
+				errorMessage: renderErrorMessageCardNumbers(cardNumbers),
+				children: cardNumbers.map((value, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+					type: "text",
+					value,
+					maxLength: 4,
+					placeholder: "1234",
+					isError: renderErrorCardNumberInput(cardNumbers[index]),
+					onChange: (e) => handleChangeCardNumber(index, e.target.value),
+					onBlur: () => handleBlurCardNumber(index)
+				}, index))
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FormGroup, {
+				title: "카드 유효기간을 입력해 주세요",
+				subTitle: "월/년도(MMYY)를 순서대로 입력해 주세요",
+				label: "유효기간",
+				errorMessage: renderErrorMessageExpirationDate(expirationDate),
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+					type: "tel",
+					value: expirationDate.month,
+					maxLength: 2,
+					onChange: (e) => handleChangeExpirationDate("month", e.target.value),
+					onBlur: () => {
+						handleBlurExpirationDate("month");
+					},
+					isError: Object.values(onBlurExpirationDate).includes(true) && !isValidateExpirationDate.month,
+					placeholder: "MM"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+					type: "tel",
+					value: expirationDate.year,
+					maxLength: 2,
+					onChange: (e) => handleChangeExpirationDate("year", e.target.value),
+					onBlur: () => {
+						handleBlurExpirationDate("year");
+					},
+					isError: Object.values(onBlurExpirationDate).includes(true) && !isValidateExpirationDate.year,
+					placeholder: "YY"
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FormGroup, {
+				title: "CVC 번호를 입력해 주세요",
+				label: "CVC",
+				errorMessage: renderErrorMessageCvc(cvc),
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+					type: "text",
+					value: cvc,
+					maxLength: 3,
+					placeholder: "123",
+					isError: onBlurCvc && !validateCvc(cvc),
+					onChange: (e) => handleChangeCvc(e.target.value),
+					onBlur: () => handleBlurCvc()
+				})
 			})
-		})
-	] });
+		]
+	});
 };
 //#endregion
 //#region src/App.tsx

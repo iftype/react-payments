@@ -138,7 +138,23 @@ Add the correct display in Chrome and Safari.
 	display: list-item;
 }body {}body {
   font-family: 'Noto Sans', sans-serif;
-}._card_tg565_1 {
+}._payments_1us6g_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  max-width: 600px;
+  margin: auto;
+}
+._creditCard_1d5px_1 {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 77px;
+  padding-bottom: 45px;
+}
+
+._card_1d5px_9 {
   display: inline-block;
   position: relative;
   width: 212px;
@@ -150,7 +166,7 @@ Add the correct display in Chrome and Safari.
   box-sizing: border-box;
 }
 
-._card_tg565_1:after {
+._card_1d5px_9:after {
   content: '';
   position: absolute;
   width: 36px;
@@ -163,27 +179,27 @@ Add the correct display in Chrome and Safari.
   background-color: #ddcd78;
 }
 
-._brand_tg565_26 {
+._brand_1d5px_34 {
   position: absolute;
   top: 8px;
   right: 12px;
   width: 36px;
 }
 
-._brand_tg565_26 svg {
+._brand_1d5px_34 svg {
   width: 100%;
   height: auto;
 }
 
-._number_tg565_38 {
+._number_1d5px_46 {
   padding-top: 44px;
   color: #ffffff;
   font-size: 14px;
 }
-._number_tg565_38 span {
+._number_1d5px_46 span {
   padding-right: 10px;
 }
-._expirationDate_tg565_46 {
+._expirationDate_1d5px_54 {
   padding-top: 8px;
   color: #ffffff;
   font-size: 14px;
